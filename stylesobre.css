@@ -90,74 +90,33 @@ body {
 /* ==========================================
    HERO PRINCIPAL
 ========================================== */
-/* ============================
-   HERO SECTION
-============================ */
-.hero.home-hero {
+.home-hero {
   position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(rgba(27, 40, 62, 0.6), rgba(27, 40, 62, 0.6)),
+              url('Imagens/hero.jpg') center/cover no-repeat;
+  color: var(--branco);
+  padding: 8rem 1rem;
   text-align: center;
-  color: var(--branco);
   overflow: hidden;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-              url('') center/cover no-repeat;
 }
 
-/* Caso queira sobrepor a imagem com opacidade controlada */
-.hero.home-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('luanda3.jpg') center/cover no-repeat;
-  opacity: 0.35; /* ← ajusta a opacidade aqui */
-  z-index: 0;
-}
-
-/* Conteúdo sobre a imagem */
-.hero-content {
+.home-hero .hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 0 1.5rem;
-  animation: fadeIn 1s ease-in-out;
+  z-index: 2;
 }
 
-/* Estilo do título e texto */
-.hero-content h1 {
-  font-size: 2.8rem;
+.home-hero h1 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  font-weight: 600;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
+.home-hero p {
+  font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #f5f5f5;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Botão */
-.hero-content .btn {
-  background-color: var(--bege);
-  color: var(--branco);
-  padding: 0.8rem 1.8rem;
-  border-radius: 40px;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.hero-content .btn:hover {
-  background-color: var(--azul-escuro);
-}
-
-/* Animação */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 
 /* ======== BOTÃO PRINCIPAL ======== */
 .btn {
