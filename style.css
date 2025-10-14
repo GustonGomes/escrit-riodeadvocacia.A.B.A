@@ -102,7 +102,7 @@ body {
   text-align: center;
   color: var(--branco);
   overflow: hidden;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  background: linear-gradient(rgba(2, 1, 32, 0.45), rgba(2, 2, 2, 0.45)),
               url('') center/cover no-repeat;
 }
 
@@ -112,7 +112,7 @@ body {
   position: absolute;
   inset: 0;
   background: url('luanda3.jpg') center/cover no-repeat;
-  opacity: 0.35; /* ← ajusta a opacidade aqui */
+  opacity: 0.100; /* ← ajusta a opacidade aqui */
   z-index: 0;
 }
 
