@@ -250,16 +250,126 @@ body {
   transform: scale(1.03);
 }
 
-/* ==========================================
-   RODAPÉ
-========================================== */
-footer {
-  background: var(--azul-escuro);
+/* ============================
+   FOOTER
+============================ */
+.footer {
+  background-color: var(--azul-escuro);
   color: var(--branco);
-  text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 60px 20px 0;
   font-size: 0.95rem;
+  position: relative;
 }
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.footer h3 {
+  color: var(--bege);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer p,
+.footer a {
+  color: #ddd;
+  line-height: 1.7;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--bege);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer i {
+  margin-right: 8px;
+  color: var(--bege);
+}
+
+/* WhatsApp Link */
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--bege);
+  color: var(--azul-escuro);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.whatsapp-link:hover {
+  background-color: var(--branco);
+  color: var(--azul-escuro);
+}
+
+/* Redes sociais */
+.social-links a {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  background: var(--bege);
+  color: var(--azul-escuro);
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 10px;
+  transition: transform 0.3s ease, background 0.3s;
+}
+.social-links a:hover {
+  transform: translateY(-5px);
+  background: var(--branco);
+}
+
+/* Mapa */
+.footer-map {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-top: 2px solid rgba(255,255,255,0.1);
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+.footer-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: brightness(0.8);
+}
+
+/* Linha inferior */
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+  background-color: #162032;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+}
+
 
 /* ==========================================
    ANIMAÇÕES
