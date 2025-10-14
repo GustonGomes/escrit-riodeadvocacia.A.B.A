@@ -1,0 +1,125 @@
+/* ==========================================
+   PALETA E BASE
+========================================== */
+:root {
+  --azul-escuro: #1b283e;
+  --azul-cinza: #3c485e;
+  --bege: #bb9684;
+  --branco: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  background: var(--branco);
+  color: var(--azul-escuro);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   CABEÇALHO / NAVBAR
+========================================== */
+header.navbar.branco {
+  background: var(--branco);
+  color: var(--azul-escuro);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.navbar.branco a {
+  color: var(--azul-escuro);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header.navbar.branco a:hover,
+header.navbar.branco a.active {
+  color: var(--bege);
+}
+
+.logo img {
+  max-height: 70px;
+}
+
+/* ==========================================
+   SEÇÃO PRINCIPAL SOBRE
+========================================== */
+.sobre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sobre-texto h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--azul-escuro);
+}
+
+.sobre-texto p {
+  font-size: 1.05rem;
+  color: var(--azul-cinza);
+  margin-bottom: 1rem;
+}
+
+.sobre-imagem {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   MISSÃO, VISÃO E VALORES
+========================================== */
+.missao {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--azul-escuro);
+  color: var(--branco);
+}
+
+.missao h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.missao p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--branco);
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+@media (max-width: 768px) {
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato – Antónia Baltazar de Araújo</title>
+  <link rel="stylesheet" href="contato.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ================================
+       ANIMAÇÃO SUAVE DE SUCESSO
+    ================================= */
+    .hidden {
+      display: none;
+    }
+
+    #successMessage {
+      background: #f8fff8;
+      border: 2px solid #25d366;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: #1b283e;
+      animation: fadeIn 0.7s ease-in-out;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    #successMessage i {
+      font-size: 3rem;
+      color: #25d366;
+      margin-bottom: 1rem;
+    }
+
+    #successMessage h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #1b283e;
+    }
+
+    #successMessage p {
+      color: #3c485e;
+      margin-bottom: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===========================
+       NAVBAR
+  ============================ -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="Logo/Azul.png" alt="Logotipo Antónia Baltazar de Araújo">
+    </div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="AreasdeAtuacao.html">Áreas de Atuação</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       SEÇÃO DE CONTATO
+  ============================ -->
+  <section class="contato-section">
+    <h1>Entre em Contato</h1>
+    <p class="intro-text fade-in">
+      Estamos prontos para ouvir o seu caso e oferecer a melhor solução jurídica.  
+      Preencha o formulário ou fale connosco diretamente pelo WhatsApp.
+    </p>
+
+    <div class="contato-grid">
+      <!-- FORMULÁRIO -->
+      <div class="contato-form fade-in">
+        <form id="contactForm" action="https://formsubmit.co/celestinogomes122@gmail.com" method="POST">
+          <!-- CONFIGURAÇÕES FORM SUBMIT -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+
+        <!-- MENSAGEM DE SUCESSO LOCAL -->
+        <div id="successMessage" class="hidden">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Mensagem enviada com sucesso!</h3>
+          <p>Obrigado pelo contato! Nossa equipa responderá o mais breve possível.</p>
+          <a href="index.html" class="btn">Voltar ao Início</a>
+        </div>
+      </div>
+
+      <!-- INFORMAÇÕES DE CONTATO -->
+      <div class="info-contato fade-in">
+        <h2>Informações de Contato</h2>
+        <p><strong>Endereço:</strong> Rua Rainha Ginga nº 29 a 31, dentro do Costa Hotel, 5º andar, Luanda</p>
+        <p><strong>Telefone:</strong> +244 934 501 460 / +244 935 931 317</p>
+        <p><strong>Email:</strong> omaraaraujo27@gmail.com / elizelsa18@gmail.com</p>
+        <p><strong>Cédula Profissional:</strong> 3.748</p>
+        <hr>
+        <a href="https://wa.me/244934501460" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Fale pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       RODAPÉ
+  ============================ -->
+  <footer>
+    <p>© 2025 Antónia Baltazar de Araújo – Escritório de Advocacia. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- BOTÃO FIXO WHATSAPP -->
+  <a href="https://wa.me/244934501460" target="_blank" class="whatsapp-float">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ===========================
+       SCRIPT DE ENVIO
+  ============================ -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const action = form.action;
+
+      try {
+        const response = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          form.style.display = 'none';
+          successMsg.classList.remove('hidden');
+        } else {
+          alert('Ocorreu um erro ao enviar. Tente novamente.');
+        }
+      } catch (error) {
+        alert('Erro de conexão. Verifique sua internet e tente novamente.');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* ============================
+   CORES E FONTES
+============================ */
+:root {
+  --azul-escuro: #1b283e;
+  --bege: #bb9684;
+  --branco: #ffffff;
+  --cinza: #f8f9fa;
+  --sombra: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cinza);
+  color: var(--azul-escuro);
+}
+
+/* ============================
+   NAVBAR
+============================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--azul-escuro);
+  padding: 1rem 5%;
+  box-shadow: 0 2px 6px var(--sombra);
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: var(--bege);
+  transform: scale(1.05);
+}
+
+/* ============================
+   SEÇÃO DE SUCESSO
+============================ */
+.sucesso-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--azul-escuro), #243752);
+}
+
+.sucesso-card {
+  background-color: var(--branco);
+  border-radius: 20px;
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 500px;
+  box-shadow: 0 6px 18px var(--sombra);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.sucesso-card i {
+  color: #28a745;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.sucesso-card h1 {
+  font-size: 1.8rem;
+  color: var(--azul-escuro);
+}
+
+.sucesso-card p {
+  color: #555;
+  margin: 1rem 0 2rem;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: var(--bege);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: var(--azul-escuro);
+  transform: scale(1.05);
+}
+
+/* ============================
+   ANIMAÇÕES
+============================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================
+   RODAPÉ
+============================ */
+footer {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

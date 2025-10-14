@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antónia Baltazar de Araújo - Advocacia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar branco">
+    <div class="logo">
+      <img src="Logo/Azul.png" alt="Logotipo Antónia Baltazar de Araújo">
+    </div>
+    <nav>
+      <a href="index.html" class="active">Início</a>
+      <a href="AreasdeAtuacao.html">Áreas de Atuação</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero home-hero">
+    <div class="hero-content">
+      <h1>Excelência e Justiça ao Seu Alcance</h1>
+      <p>Comprometidos com a ética, dedicação e resultados. A confiança dos nossos clientes é o nosso maior patrimônio.</p>
+      <a href="contato.html" class="btn">Agende uma Consulta</a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sobre-home fade-in">
+    <div class="container">
+      <h2>Quem Somos</h2>
+      <p>Desde 2020, o Escritório <strong>Antónia Baltazar de Araújo</strong> tem se destacado pela excelência na prestação de serviços jurídicos. Atuamos nas áreas <strong>Civil, Penal, Empresarial</strong> e <strong>Trabalhista</strong>, sempre com compromisso, ética e resultados.</p>
+      <a href="sobre.html" class="btn-secundario">Saiba Mais</a>
+    </div>
+  </section>
+
+  <!-- Estatísticas -->
+  <section class="estatisticas">
+    <div class="stats-container">
+      <div class="stat-box">
+        <h3 class="counter" data-target="5">0</h3>
+        <p>Anos de Experiência</p>
+      </div>
+      <div class="stat-box">
+        <h3 class="counter" data-target="100">0</h3>
+        <p>Clientes Atendidos</p>
+      </div>
+      <div class="stat-box">
+        <h3 class="counter" data-target="100">0</h3>
+        <p>Casos Resolvidos</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Galeria / Equipa -->
+  <section class="galeria fade-in">
+    <h2>Nosso Escritório</h2>
+    <p>Conheça o ambiente e a equipa que trabalha com dedicação para garantir o melhor resultado jurídico para cada cliente.</p>
+    <div class="galeria-grid">
+      <div class="foto-card"><img src="Imagens/Escritorio-de-Advocacia-para-Empresa.jpg" alt="Escritório de advocacia"></div>
+      <div class="foto-card"><img src="Imagens/soma-mattos-filho-quiroga-and-lawyers-scaled.jpg" alt="Equipa de advogados"></div>
+      <div class="foto-card"><img src="Imagens/" alt="Reunião com cliente"></div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 Antónia Baltazar de Araújo – Escritório de Advocacia. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script simples para animação de números -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 80;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 40);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
+</body>
+</html>

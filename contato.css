@@ -1,0 +1,265 @@
+/* ==========================================
+   PALETA DE CORES
+========================================== */
+:root {
+  --azul-escuro: #1b283e;  /* cor principal */
+  --azul-cinza: #3c485e;
+  --bege: #bb9684;
+  --branco: #ffffff;
+  --whatsapp: #25d366;
+}
+
+/* ==========================================
+   RESET E BASE
+========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  background: var(--branco);
+  color: var(--azul-escuro);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--branco);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+}
+
+.navbar nav a {
+  color: var(--azul-escuro);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: var(--bege);
+}
+
+/* ==========================================
+   SEÇÃO CONTATO
+========================================== */
+.contato-section {
+  padding: 5rem 2rem;
+  background: var(--branco);
+  text-align: center;
+}
+
+.contato-section h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  color: var(--azul-escuro);
+}
+
+.intro-text {
+  color: var(--azul-cinza);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+.contato-form {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: var(--branco);
+  color: var(--azul-escuro);
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid var(--bege);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  background: var(--bege);
+  color: var(--azul-escuro);
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--azul-cinza);
+  color: var(--branco);
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--whatsapp);
+  color: var(--branco);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+  transition: 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp i {
+  font-size: 1.2rem;
+}
+
+/* ==========================================
+   INFORMAÇÕES DE CONTATO
+========================================== */
+.info-contato {
+  text-align: left;
+  padding: 2.5rem;
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.info-contato h2 {
+  color: var(--azul-escuro);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.info-contato p {
+  color: var(--azul-cinza);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.info-contato hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.5rem 0;
+}
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+footer {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  margin-top: 4rem;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+@media (max-width: 900px) {
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contato-form, .info-contato {
+    padding: 2rem;
+  }
+
+  .btn-whatsapp {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-section {
+    padding: 3rem 1rem;
+  }
+
+  .contato-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  #successMessage {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin-top: 2rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#successMessage i {
+  color: #28a745;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#successMessage.hidden {
+  display: none;
+}
+
+}

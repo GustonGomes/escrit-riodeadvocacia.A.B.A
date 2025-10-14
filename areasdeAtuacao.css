@@ -1,0 +1,133 @@
+/* ==========================================
+   HERO
+========================================== */
+.areas-hero {
+  background: linear-gradient(rgba(27, 40, 62, 0.75), rgba(27, 40, 62, 0.75)),
+              url('../Imagens/hero-areas.jpg') center/cover no-repeat;
+  color: var(--branco);
+  text-align: center;
+  padding: 7rem 1rem;
+}
+
+.areas-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   GERAL DE SEÇÕES
+========================================== */
+section {
+  padding: 5rem 1rem;
+  text-align: center;
+  background: var(--branco);
+}
+
+section:nth-child(even) {
+  background: #f9f9f9;
+}
+
+h2 {
+  color: var(--azul-escuro);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--bege);
+  margin: 0.8rem auto;
+  border-radius: 2px;
+  animation: expand 1.2s ease;
+}
+
+@keyframes expand {
+  from { width: 0; opacity: 0; }
+  to { width: 70px; opacity: 1; }
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--azul-cinza);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   CARDS GERAIS
+========================================== */
+.areas-grid,
+.diferenciais-grid,
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.area-card,
+.diff-card,
+.plano-card {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 1s forwards;
+}
+
+.area-icon {
+  font-size: 3rem;
+  color: var(--bege);
+  display: block;
+  margin: 0 auto 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+.area-card h3,
+.diff-card h3,
+.plano-card h3 {
+  color: var(--bege);
+  margin-bottom: 0.8rem;
+}
+
+.area-card:hover,
+.diff-card:hover,
+.plano-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.area-card:hover .area-icon,
+.diff-card:hover .area-icon,
+.plano-card:hover .area-icon {
+  transform: scale(1.2) rotate(8deg);
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+@media (max-width: 768px) {
+  .areas-hero h1 {
+    font-size: 2rem;
+  }
+  .area-card,
+  .diff-card,
+  .plano-card {
+    padding: 2rem 1rem;
+  }
+}
