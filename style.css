@@ -111,8 +111,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('luanda3.jpg') center/cover no-repeat;
-  opacity: 0.100; /* ← ajusta a opacidade aqui */
+  background: url('como-funciona-ia-para-advogados-1.jpg') center/cover no-repeat;
+  opacity: 0.; /* ← ajusta a opacidade aqui */
   z-index: 0;
 }
 
