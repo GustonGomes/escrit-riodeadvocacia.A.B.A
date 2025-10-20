@@ -223,35 +223,73 @@ body {
   color: var(--azul-escuro);
 }
 
-/* ==========================================
+/* ============================
    ESTATÍSTICAS
-========================================== */
+============================ */
 .estatisticas {
-  background: var(--azul-escuro);
-  color: var(--branco);
+  position: relative;
+  background: url('5-Ferramentas-de-Inteligencia-Artificial-para-advogados.jpg') center/cover no-repeat;
+  color: #fff;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.estatisticas .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 .stats-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .stat-box {
-  min-width: 150px;
+  flex: 1 1 250px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 20px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .stat-box h3 {
-  font-size: 2.2rem;
-  color: var(--bege);
+  font-size: 3rem;
+  color: #bb9684; /* cor bege do teu tema */
+  margin-bottom: 10px;
 }
 
 .stat-box p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 1px;
 }
+
+/* Animação fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ==========================================
    GALERIA / EQUIPA

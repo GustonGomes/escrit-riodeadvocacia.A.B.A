@@ -39,23 +39,26 @@
   </section>
 
   <!-- Estatísticas -->
-  <section class="estatisticas">
-    <div class="stats-container">
-      <div class="stat-box">
-        <h3 class="counter" data-target="5">0</h3>
-        <p>Anos de Experiência</p>
-      </div>
-      <div class="stat-box">
-        <h3 class="counter" data-target="32">0</h3>
-        <p>Clientes Atendidos</p>
-      </div>
-      <div class="stat-box">
-        <h3 class="counter" data-target="32">0</h3>
-        <p>Casos Resolvidos</p>
-      </div>
-      
+<section class="estatisticas fade-in">
+  <div class="overlay"></div>
+  <div class="stats-container">
+    <div class="stat-box">
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Anos de Experiência</p>
     </div>
-  </section>
+
+    <div class="stat-box">
+      <h3 class="counter" data-target="32">0</h3>
+      <p>Clientes Atendidos</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 class="counter" data-target="32">0</h3>
+      <p>Casos Resolvidos</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- Galeria / Equipa -->
   <section class="galeria fade-in">
@@ -133,14 +136,24 @@
 
   <!-- Script simples para animação de números -->
   <script>
-    const counters = document.querySelectorAll('.counter');
+// Animação de contagem
+const counters = document.querySelectorAll('.counter');
+const section = document.querySelector('.estatisticas');
+
+let started = false;
+
+window.addEventListener('scroll', () => {
+  const sectionTop = section.getBoundingClientRect().top;
+  if (sectionTop < window.innerHeight && !started) {
+    started = true;
     counters.forEach(counter => {
+      counter.innerText = '0';
+      const target = +counter.getAttribute('data-target');
+      const increment = target / 100;
       const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / 80;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
+        const current = +counter.innerText;
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
           setTimeout(updateCount, 40);
         } else {
           counter.innerText = target;
@@ -148,6 +161,10 @@
       };
       updateCount();
     });
-  </script>
+    section.classList.add('visible');
+  }
+});
+</script>
+
 </body>
 </html>
